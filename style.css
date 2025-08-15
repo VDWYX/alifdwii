@@ -246,3 +246,166 @@ input:focus,textarea:focus{outline:2px solid var(--brand)}
   .software-item{ padding: 12px; }
   .software-item h3{ font-size: 0.9rem; }
 }
+
+:root{
+  --bg:#040506;
+  --text:#eef2ff;
+  --accent:#FFD60A;
+
+  /* Brand colors */
+  --yt:#000000;
+  --in:#000000;
+  --tt:#000000;
+  --ig:#000000;   /* pakai satu warna solid */
+  --gh:#000000;
+  --wa:#000000;
+}
+
+.social-circles{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
+  justify-items:center;
+}
+
+.btn-circle{
+  width:56px; height:56px;
+  border-radius:999px;
+  display:grid; place-items:center;
+  background:#222433;           /* default base */
+  border:1px solid #2b2e42;
+  text-decoration:none;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease;
+  will-change:transform;
+}
+
+.btn-circle .icon{
+  width:26px; height:26px;
+  /* simple-icons itu hitam; jadikan putih */
+  filter: brightness(0) invert(1);
+  display:block;
+}
+
+/* Brand backgrounds */
+.btn-circle.youtube   { background: var(--yt); }
+.btn-circle.linkedin  { background: var(--in); }
+.btn-circle.tiktok    { background: var(--tt); }
+.btn-circle.instagram { background: var(--ig); }
+.btn-circle.github    { background: var(--gh); }
+.btn-circle.whatsapp  { background: var(--wa); }
+
+/* Hover/focus */
+.btn-circle:hover,
+.btn-circle:focus-visible{
+  transform: translateY(-2px) scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 10px 26px rgba(0,0,0,.25), 0 0 0 3px rgba(255,214,10,.15);
+  outline: none;
+}
+
+/* Ukuran lebih kecil di layar mungil */
+@media (max-width:480px){
+  .btn-circle{ width:52px; height:52px }
+  .btn-circle .icon{ width:24px; height:24px }
+}
+
+:root{
+  /* tambahkan variabel ukuran & jarak yang responsif */
+  --icon-size: clamp(48px, 6vw, 64px);   /* ukuran bulatan: kecil di HP, lebih besar di laptop */
+  --icon-gap:  clamp(10px, 2.2vw, 18px); /* jarak default (density-normal) */
+}
+
+/* ===== Center container (opsional) =====
+   Tambahkan class .center-block pada <section> untuk memusatkan seluruh blok di halaman */
+.center-block{
+  display:grid;
+  place-items:center;       /* vertikal + horizontal */
+  min-height: 100dvh;       /* biar benar di mobile modern */
+  padding: clamp(12px, 3vw, 24px);
+}
+
+/* ===== Grid ikon bulat ===== */
+.social-circles{
+  list-style:none; margin:0; padding:0;
+
+  /* kolom berukuran tetap = var(--icon-size), jumlah kolom menyesuaikan lebar layar */
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--icon-size), var(--icon-size)));
+  gap: var(--icon-gap);
+
+  /* biar baris & kolom tetap di tengah di semua breakpoint */
+  justify-content:center;   /* center secara horizontal */
+  justify-items:center;     /* center tiap item di sel */
+  align-items:center;       /* rapikan tinggi baris */
+  margin-inline:auto;       /* center keseluruhan blok */
+  padding-inline: clamp(8px, 3vw, 24px);
+}
+
+/* Preset kerapatan jarak (pilih salah satu dengan class di <ul>) */
+.social-circles.density-rapat   { --icon-gap: clamp(6px, 1.4vw, 12px); }
+.social-circles.density-normal  { --icon-gap: clamp(10px, 2.2vw, 18px); } /* default */
+.social-circles.density-renggang{ --icon-gap: clamp(14px, 3vw, 26px); }
+
+/* Ukuran ikon bulat mengikuti var(--icon-size) */
+.btn-circle{
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius:999px;
+  display:grid; place-items:center;
+  background:#222433;
+  border:1px solid #2b2e42;
+  text-decoration:none;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease;
+  will-change:transform;
+}
+
+/* Skala logo di dalam bulatan proporsional dengan ukuran bulatan */
+.btn-circle .icon{
+  width: calc(var(--icon-size) * 0.46);
+  height: calc(var(--icon-size) * 0.46);
+  filter: brightness(0) invert(1); /* simple-icons hitam -> jadi putih */
+  display:block;
+}
+
+/* Hover/focus (tetap) */
+.btn-circle:hover,
+.btn-circle:focus-visible{
+  transform: translateY(-2px) scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 10px 26px rgba(0,0,0,.25), 0 0 0 3px rgba(255,214,10,.15);
+  outline: none;
+}
+/* Pastikan semua .container selalu center */
+.container{
+  width: min(100% - 32px, 1160px); /* responsif dengan padding kiri/kanan */
+  margin-inline: auto;             /* center horizontal */
+}
+
+/* Khusus section Kontak */
+#contact{
+  display: grid;
+  justify-items: center; /* item di tengah secara horizontal */
+  gap: 12px;
+  padding-block: 24px 48px;
+}
+
+/* Form-nya dibatasi agar enak dibaca di layar besar & tetap penuh di HP */
+#contact form{
+  width: min(100%, 560px); /* max 560px, tapi penuh di layar kecil */
+  margin-inline: auto;
+}
+
+/* Field dan tombol biar melebar penuh */
+#contact input,
+#contact textarea,
+#contact button{
+  width: 100%;
+}
+
+/* Opsional: jika ingin kontak benar-benar di tengah layar (vertikal & horizontal),
+   tambahkan class 'is-center-v' pada section#contact di HTML */
+#contact.is-center-v{
+  min-height: 100svh;   /* tinggi 1 layar, aman untuk mobile browser UI */
+  place-content: center;
+  padding-block: 0;
+}
