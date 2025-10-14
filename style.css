@@ -47,7 +47,7 @@ a{color:inherit;
 
 /* HERO */
 .hero{min-height:100svh; position:relative; display:grid; place-items:center; text-align:center; overflow:hidden}
-.hero::before{content:""; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(255,209,102,.35), rgba(25,26,42,0) 60%), url('Prfl.jpg') center/cover no-repeat fixed; filter:contrast(110%) saturate(105%)}
+.hero::before{content:""; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(255,209,102,.35), rgba(25,26,42,0) 60%), url('home-bg.jpg') center/cover no-repeat fixed; filter:contrast(110%) saturate(105%)}
 .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.60))}
 .hero .inner{position:relative; z-index:1; max-width:860px; padding:0 20px}
 .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.15); border-radius:999px; font-size:.85rem; color:var(--muted); background:rgba(0,0,0,.3)}
