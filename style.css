@@ -1,7 +1,7 @@
 
 :root{
   --bg:#06060a; /* new background color */
-  --card:#09090d; --soft:#07080a; --txt:#eef2ff; --muted:#b8c1ec; --brand:#ffd166; --maxw:1160px;
+  --card:#09090d; --soft:#07080a; --txt:#eef2ff; --muted:#b8c1ec; --brand:#5c42b1; --maxw:1160px;
 }
 *{box-sizing:border-box}
 html,body{margin:0; padding:0; 
@@ -172,7 +172,7 @@ input:focus,textarea:focus{outline:2px solid var(--brand)}
 .software-item h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color:hwb(43 8% 1%);
+    color:#5c42b1;
 }
 
 .skill-level {
@@ -183,7 +183,7 @@ input:focus,textarea:focus{outline:2px solid var(--brand)}
 }
 
 .skill-bar {
-    background-color: hwb(37 4% 0%);
+    background-color:#5c42b1;
     border-radius: 25px;
     height: 100%;
 }
@@ -250,7 +250,7 @@ input:focus,textarea:focus{outline:2px solid var(--brand)}
 :root{
   --bg:#040506;
   --text:#eef2ff;
-  --accent:#FFD60A;
+  --accent:#5c42b1;
 
   /* Brand colors */
   --yt:#000000;
